@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MaALa Enterprise LLP</title>
+<link rel="stylesheet" href="style.css">
+<style></style>
+</head>
+<body>
+
+<header>
+  <div class="search-bar">
+    <span id="search-icon">🔍</span>
+    <input id="search-input" type="text" placeholder="Search products..." onkeyup="searchProducts(this.value)">
+  </div>
+  <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<div class="sidebar" id="sidebar">
+  <button class="sidebar-close" onclick="toggleMenu()">✖</button>
+  <ul id="sidebar-menu"></ul>
+</div>
+
+<div class="cart-summary" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+
+<div class="cart-details" id="cart-details">
+  <button id="cart-close" onclick="toggleCart()">✖</button>
+  <p>Home delivery available in Ivy Estate</p>
+  <div id="order-id">Order ID:</div>
+
+  <div id="cart-empty">
+    <p>Your cart is empty!</p>
+    <button id="shop-now">Shop Now</button>
+  </div>
+
+  <div id="cart-items" style="margin-top:50px;"></div>
+
+  <div id="cart-actions" style="display:flex; gap:8px; margin-top:10px;">
+    <button id="reset-cart" class="clear-cart" style="flex:1;">Reset Cart</button>
+    <button id="checkout" style="flex:1; background:linear-gradient(90deg,#42a5f5,#1de9b6); color:#fff; border:none; border-radius:6px; cursor:pointer;">Checkout</button>
+  </div>
+
+  <div id="order-form" style="display:none; margin-top:15px;"> 
+    
+    <input type="text" id="customer-name" placeholder="Name" style="width:93%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc;">
+    <textarea id="customer-address" placeholder="Address" style="width:93%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc;"></textarea>
+    <button id="submit-order" style="width:100%; background:linear-gradient(90deg,#42a5f5,#1de9b6); color:#fff; border:none; border-radius:6px; padding:10px; cursor:pointer;">Place Order</button>
+  </div>
+
+  <div class="cart-total">Total: ₹<span id="cart-total">0</span></div>
+</div>
+
+<main class="products" id="products-container"></main>
+<footer>
+ <!---- <p>© 2024 MaALa Enterprise LLP. All rights reserved.</p>-->
+ <p>© <span id="current_year"></span> MaALa Enterprise LLP. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
